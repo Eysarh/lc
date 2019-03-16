@@ -2,7 +2,10 @@ var threeSum = function(nums) {
   if (nums.length === 3) return nums
   let ret = []
   let record = new Map()
-  nums.sort()
+  const sf = (a, b) => {
+    return a - b
+  }
+  nums.sort(sf)
   let center = 0
   while (center < nums.length && nums[center] < 0) {
     ++center
